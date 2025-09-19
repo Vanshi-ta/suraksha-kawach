@@ -99,8 +99,8 @@ Directory structure:
 ### 🔹 1. Clone the Repository
 
 ```bash
-git clone GITHUB_LINK_TO_THE_REPO
-cd suraksha-kawach
+git clone https://github.com/Vanshi-ta/suraksha-kawach-2.0.git
+cd suraksha-kawach-2.0
 ```
 
 ---
