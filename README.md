@@ -5,14 +5,14 @@ It combines **learning modules, hazard hunts, AR simulations, real-time alerts, 
 
 ---
 
-## 📌 Overview
+## Overview
 
 The application is built as a **Single Page Application (SPA)** using **React + TypeScript**, ensuring a **fast, fluid, and app-like experience**.
 It empowers schools and communities to **learn, practice, and stay prepared** for natural disasters through **interactive learning** and **gamified drills**.
 
 ---
 
-## ✅ Tasks Accomplished
+## Tasks Accomplished
 
 * [x] Designed and implemented **Gyan Kendra** (Learning Modules + Courses + Videos).
 * [x] Built **Abhyas Arena** with quizzes, Hazard Hunt, and AR drills for earthquake safety.
@@ -22,23 +22,31 @@ It empowers schools and communities to **learn, practice, and stay prepared** fo
 
 ---
 
-## 🛠️ Technology Stack
+## Technology Stack 
 
-This project leverages the following technologies:
+- *React.js* – We used React to build the frontend because it makes the app fast and smooth. Its component-based design allowed us to easily create reusable pieces like buttons, cards, and dashboards.  
 
-* **[React](https://reactjs.org/):** Component-based frontend framework for UI.
-* **[TypeScript](https://www.typescriptlang.org/):** Static typing for scalability and maintainability.
-* **[TailwindCSS](https://tailwindcss.com/):** Utility-first styling for responsive design.
-* **[Framer Motion](https://www.framer.com/motion/):** Smooth animations and interactive feedback.
-* **[Recharts](https://recharts.org/):** Data visualization for dashboards (progress, scores).
-* **[i18next](https://www.i18next.com/):** Multilingual support (English + Hindi).
-* **[TensorFlow.js](https://www.tensorflow.org/js):** Pose detection for AR drills.
-* **[Node.js + Express](https://expressjs.com/):** Backend APIs for authentication and data management.
-* **[MongoDB](https://www.mongodb.com/):** Database for user profiles, progress, quizzes, and reports.
+- *TypeScript* – Since our project is large, TypeScript helps us avoid silly errors by adding types. It makes the code cleaner, safer, and easier for the whole team to work on together.  
+
+- *React Router* – This makes our app feel like a real application rather than a website. It lets users switch between pages (like dashboard, modules, reports) instantly without reloading.  
+
+- *Context API* – Instead of passing data through many layers of components, we used Context to manage global things like login state and theme across the app easily.  
+
+- *Tailwind CSS* – For styling, Tailwind made our work super quick. With its utility classes, we didn’t have to write long CSS files, and the UI looks consistent and modern.  
+
+- *Framer Motion* – To make the app engaging, we added smooth animations (like transitions and modals). It gives the app a polished, professional feel.  
+
+- *Recharts* – For teachers and admins, we wanted clear visuals of reports and scores. Recharts let us build interactive charts that are simple to understand.  
+
+- *i18next* – Since our users may prefer different languages, we added support for both English and Hindi to make the app more inclusive.  
+
+- *Node.js & Express.js* – These power our backend. Together, they handle things like login, saving reports, and sending alerts.  
+
+- *MongoDB* – We chose MongoDB as our database because it’s flexible and works great for storing different types of data like modules, reports, and alerts.  
 
 ---
 
-## 🌟 Key Features
+## Key Features
 
 * **Gyan Kendra** → Learning modules, videos, and structured courses.
 * **Abhyas Arena** → Quizzes, Hazard Hunt, First-Aid games, AR earthquake drills.
@@ -49,54 +57,9 @@ This project leverages the following technologies:
 
 ---
 
-## 📂 Project Structure
+## Local Setup Instructions
 
-```
-Directory structure:
-└── suraksha-kawach/
-    ├── README.md
-    ├── App.tsx
-    ├── constants.ts
-    ├── i18n.ts
-    ├── index.html
-    ├── index.tsx
-    ├── metadata.json
-    ├── package.json
-    ├── tsconfig.json
-    ├── types.ts
-    ├── vite.config.ts
-    ├── components/
-    │   ├── ChatbotWidget.tsx
-    │   ├── Icons.tsx
-    │   ├── LanguageSwitcher.tsx
-    │   ├── OnboardingTour.tsx
-    │   └── VideoPlayer.tsx
-    ├── locales/
-    │   └── en/
-    │       └── translation.ts
-    └── pages/
-        ├── AbhyasArena.tsx
-        ├── CoursePage.tsx
-        ├── Dashboard.tsx
-        ├── EarthquakeARPage.tsx
-        ├── FirstAidMatchPage.tsx
-        ├── GyanKendra.tsx
-        ├── HazardHuntPage.tsx
-        ├── HelpPage.tsx
-        ├── Login.tsx
-        ├── ProfileSettings.tsx
-        ├── Register.tsx
-        ├── SafetyQuizPage.tsx
-        ├── SatarkHub.tsx
-        ├── ScenarioMCQsPage.tsx
-        ├── StudentReportPage.tsx
-        └── VirtualDrillPage.tsx
-
-```
-
-## ⚙️ Local Setup Instructions
-
-### 🔹 1. Clone the Repository
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/Vanshi-ta/suraksha-kawach-2.0.git
@@ -105,7 +68,7 @@ cd suraksha-kawach-2.0
 
 ---
 
-### 🔹 2. Install Dependencies
+### 2. Install Dependencies
 
 For both **Windows** and **macOS**:
 
@@ -115,7 +78,7 @@ npm install
 
 ---
 
-### 🔹 3. Start the Development Server
+### 3. Start the Development Server
 
 ```bash
 npm run dev
@@ -125,13 +88,13 @@ App will run at **[http://localhost:5173/](http://localhost:5173/)**
 
 ---
 
-## 🚀 Future Roadmap
+## Future Roadmap
 
-* 🔜 Add more **AR scenarios** (fire safety, flood evacuation).
-* 🔜 AI-powered **chatbot tutor** for disaster FAQs.
-* 🔜 Gamified **leaderboards** across schools.
-* 🔜 Enable **multi-lingual** support.
-* 🔜 Integration with **Govt APIs** for real-time disaster management.
+* Add more **AR scenarios** (fire safety, flood evacuation).
+* AI-powered **chatbot tutor** for disaster FAQs.
+* Gamified **leaderboards** across schools.
+* Enable **multi-lingual** support.
+* Integration with **Govt APIs** for real-time disaster management.
 
 ---
 
