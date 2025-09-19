@@ -1,0 +1,7 @@
+{
+  "name": "Suraksha Kawach",
+  "description": "An all-in-one digital ecosystem for disaster resilience education, featuring interactive learning, gamified practice, and real-time alerts for students, teachers, and administrators.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
