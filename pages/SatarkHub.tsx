@@ -2,7 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../App';
 import { UserRole } from '../types';
-import { Send, Users, ChevronDown, TriangleAlert, MapPin } from '../components/Icons';
+import { Send, Users, ChevronDown, TriangleAlert } from '../components/Icons';
 import { useTranslation } from 'react-i18next';
 
 interface Alert {
@@ -13,14 +13,12 @@ interface Alert {
     source: 'IMD' | 'NDMA' | 'CWC';
     message: string;
     acknowledged: boolean;
-    location: string;
-    coordinates: { lat: number, lon: number };
 }
 
 const mockAlertsData: Omit<Alert, 'acknowledged'>[] = [
-    { id: 1, type: 'Flood', severity: 'Severe', time: '15 mins ago', source: 'IMD', message: 'Heavy rainfall expected in low-lying areas. Evacuate immediately.', location: 'Delhi, India', coordinates: { lat: 28.6139, lon: 77.2090 } },
-    { id: 2, type: 'Cyclone', severity: 'Moderate', time: '1 hour ago', source: 'NDMA', message: 'Cyclone Tauktae approaching coast. Stay indoors.', location: 'Mumbai, India', coordinates: { lat: 19.0760, lon: 72.8777 } },
-    { id: 3, type: 'Earthquake', severity: 'Advisory', time: '3 hours ago', source: 'NDMA', message: 'Minor tremors felt. Be cautious of aftershocks.', location: 'Chennai, India', coordinates: { lat: 13.0827, lon: 80.2707 } },
+    { id: 1, type: 'Flood', severity: 'Severe', time: '15 mins ago', source: 'IMD', message: 'Heavy rainfall expected in low-lying areas. Evacuate immediately.' },
+    { id: 2, type: 'Cyclone', severity: 'Moderate', time: '1 hour ago', source: 'NDMA', message: 'Cyclone Tauktae approaching coast. Stay indoors.' },
+    { id: 3, type: 'Earthquake', severity: 'Advisory', time: '3 hours ago', source: 'NDMA', message: 'Minor tremors felt. Be cautious of aftershocks.' },
 ];
 
 const severityColors = {
@@ -95,24 +93,6 @@ const SatarkHubPage: React.FC = () => {
     );
 };
 
-// Static Map Placeholder Component
-const StaticMapPlaceholder: React.FC = () => (
-    <div className="relative w-full h-40 bg-gray-200 dark:bg-gray-700 rounded-lg overflow-hidden border border-gray-300 dark:border-gray-600">
-        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" className="text-gray-400 dark:text-gray-500">
-            <line x1="0" y1="0" x2="100%" y2="100%" stroke="currentColor" strokeWidth="1" strokeDasharray="4" />
-            <line x1="100%" y1="0" x2="0" y2="100%" stroke="currentColor" strokeWidth="1" strokeDasharray="4" />
-            <rect x="30%" y="30%" width="40%" height="40%" fill="none" stroke="currentColor" strokeWidth="2" />
-        </svg>
-        <div className="absolute inset-0 flex items-center justify-center">
-             <div className="text-center">
-                <MapPin className="h-8 w-8 text-danger-DEFAULT mx-auto" />
-                <span className="bg-black/50 text-white text-xs font-bold py-1 px-2 rounded mt-1 inline-block">MAP PREVIEW</span>
-            </div>
-        </div>
-    </div>
-);
-
-
 // Alert Card Component
 const AlertCard: React.FC<{ alert: Alert, onAcknowledge: (id: number) => void }> = ({ alert, onAcknowledge }) => {
     const { t } = useTranslation();
@@ -137,23 +117,25 @@ const AlertCard: React.FC<{ alert: Alert, onAcknowledge: (id: number) => void }>
 
             {/* Always visible message */}
             <p className="mt-2">{alert.message}</p>
-
-            {/* Location Info */}
-            <div className="mt-3 flex items-center text-sm font-medium text-gray-700 dark:text-gray-300">
-                <MapPin className="h-5 w-5 mr-2 text-primary-DEFAULT flex-shrink-0" />
-                <span>{alert.location} ({alert.coordinates.lat}, {alert.coordinates.lon})</span>
-            </div>
  
             {/* Expandable Detailed Info Section */}
             <div className={`grid transition-all duration-500 ease-in-out ${isExpanded ? 'grid-rows-[1fr] mt-4 pt-4 border-t border-gray-300 dark:border-gray-600' : 'grid-rows-[0fr]'}`}>
                 <div className="overflow-hidden">
                     <div className="space-y-4">
-                        <div> 
-                            <h5 className="font-semibold text-gray-800 dark:text-gray-200">Affected Area</h5>
-                            <div className="mt-2">
-                                <StaticMapPlaceholder />
-                            </div>
+                         <div>
+                            <h5 className="font-semibold text-gray-800 dark:text-gray-200">Specific Instructions</h5>
+                            <ul className="list-disc list-inside mt-1 text-sm text-gray-600 dark:text-gray-400 space-y-1">
+                                <li>Stay indoors and move to higher ground if in a low-lying area.</li>
+                                <li>Avoid using elevators during an earthquake.</li>
+                                <li>Keep an emergency kit with water, food, and first-aid supplies accessible.</li>
+                            </ul>
                         </div>
+                        <div>
+                            <h5 className="font-semibold text-gray-800 dark:text-gray-200">Affected Areas</h5>
+                            <div className="mt-2 bg-gray-200 dark:bg-gray-700 h-40 rounded-lg flex items-center justify-center text-gray-500 font-medium">
+                                [ Interactive Map Placeholder ]
+                                </div>
+                         </div>
                          <div>
                             <h5 className="font-semibold text-gray-800 dark:text-gray-200">Related Safety Tips</h5>
                             <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
