@@ -12,57 +12,6 @@ It empowers schools and communities to **learn, practice, and stay prepared** fo
 
 ---
 
-flowchart TD
-
-    %% User Access
-    UA[User Access] --> L[Login / Register]
-    UA --> P[Profile Settings]
-
-    %% Dashboard
-    L --> D[Dashboard]
-    P --> D
-
-    %% Learning Modules
-    D --> GK[Gyan Kendra]
-    D --> CP[Course Page]
-    D --> VP[Video Player]
-
-    %% Interactive Experiences
-    D --> AA[Abhyas Arena]
-    D --> VD[Virtual Drill Page]
-    D --> EQ[Earthquake AR Page]
-    D --> HH[Hazard Hunt Page]
-    D --> FA[First Aid Match Page]
-    D --> SQ[Safety Quiz Page]
-    D --> MCQ[Scenario MCQs Page]
-
-    %% Support Features
-    D --> CW[Chatbot Widget]
-    D --> OT[Onboarding Tour]
-    D --> LS[Language Switcher]
-
-    %% Reports & Tracking
-    D --> SR[Student Report Page]
-
-    %% Awareness & Resources
-    D --> SH[Satark Hub]
-    D --> HP[Help Page]
-
-    %% Core System
-    subgraph Core_System [Core System]
-        I18N[i18n - Localization]
-        CONST[Constants & Metadata]
-        BE[Backend Integration]
-    end
-
-    %% Connections
-    D --> Core_System
-    GK --> VP
-    CP --> VP
-    SR --> Core_System
-    SH --> Core_System
-
-
 ## Tasks Accomplished
 
 * [x] Designed and implemented **Gyan Kendra** (Learning Modules + Courses + Videos).
