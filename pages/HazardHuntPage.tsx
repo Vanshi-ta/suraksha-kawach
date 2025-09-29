@@ -182,7 +182,7 @@ const HazardHuntPage: React.FC = () => {
                 className="relative w-full aspect-[1536/1024] max-w-5xl mx-auto bg-gray-200 dark:bg-gray-700 rounded-2xl shadow-lg overflow-hidden cursor-crosshair"
                 onClick={handleImageClick}
             >
-                <img src="https://videos.openai.com/vg-assets/assets%2Ftask_01k57r8mn9epjvbv29xmt29nwx%2F1757975791_img_1.webp?st=2025-09-15T21%3A14%3A54Z&se=2025-09-21T22%3A14%3A54Z&sks=b&skt=2025-09-15T21%3A14%3A54Z&ske=2025-09-21T22%3A14%3A54Z&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skoid=fea36edb-a052-425e-a84a-436fdce0a7b4&skv=2019-02-02&sv=2018-11-09&sr=b&sp=r&spr=https%2Chttp&sig=ysOsnAQNyO852v1UsMNMU%2BwgDDn532mLl91ocBPu2%2Bk%3D" alt="Classroom Scene with hazards" className="w-full h-full object-cover pointer-events-none" />
+                <img src="https://videos.openai.com/vg-assets/assets%2Ftask_01k57r8mn9epjvbv29xmt29nwx%2F1757975791_img_1.webp?st=2025-09-29T20%3A31%3A01Z&se=2025-10-05T21%3A31%3A01Z&sks=b&skt=2025-09-29T20%3A31%3A01Z&ske=2025-10-05T21%3A31%3A01Z&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skoid=5e5fc900-07cf-43e7-ab5b-314c0d877bb0&skv=2019-02-02&sv=2018-11-09&sr=b&sp=r&spr=https%2Chttp&sig=rJJdLQIzTcqTrwSlTBopl3firIxD3oKwvV1FKK1F6NQ%3D&az=oaivgprodscus" />
                 
                 {HAZARD_HUNT_DATA.map(hazard => {
                     const isFound = foundHazards.has(hazard.id);
