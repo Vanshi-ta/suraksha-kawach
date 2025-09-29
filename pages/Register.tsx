@@ -91,12 +91,11 @@ const RegisterPage: React.FC = () => {
                     <p className="mt-2 text-gray-600 dark:text-gray-400">{t('register.subtitle')}</p>
                 </div>
                 
-                {/* FIX: Replaced custom 'input-field' class on inputs below and removed the non-standard <style jsx> block to fix a compilation error. The new classes are consistent with the rest of the application. */}
+               
                 <form className="space-y-4" onSubmit={handleSubmit}>
                     <div className="space-y-3">
                         <label className="text-sm font-medium text-gray-700 dark:text-gray-300">{t('register.selectRole')}</label>
                         <div className="grid grid-cols-3 gap-3">
-                            {/* FIX: Added children to RoleButton components to satisfy the required 'children' prop. Each button now includes the translated role name. */}
                             <RoleButton value={UserRole.Student}>{t('login.student')}</RoleButton>
                             <RoleButton value={UserRole.Teacher}>{t('login.teacher')}</RoleButton>
                             <RoleButton value={UserRole.Administrator}>{t('login.admin')}</RoleButton>
