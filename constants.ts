@@ -55,7 +55,7 @@ export const GYAN_KENDRA_MODULES: CourseModule[] = [
     shortDescription: 'Learn how to stay safe before, during, and after an earthquake.',
     longDescription: 'Earthquakes can strike without warning. This module teaches you how to prepare your home, what to do during the shaking (Drop, Cover, and Hold On), and how to navigate the aftermath safely.',
     keyTopics: ['Creating a Family Emergency Plan', 'Securing Your Space', 'Drop, Cover, and Hold On', 'Post-Earthquake Safety Checks', 'Assembling a Survival Kit'],
-    youtubeUrl: 'https://youtu.be/I0ureVMVzP8?si=wchfha9eGWXweD25'
+    youtubeUrl: 'https://youtu.be/gd7j0iA9eME?si=aC0Z-H9VMx5WWOt2'
   },
   {
     slug: 'flood-safety',
