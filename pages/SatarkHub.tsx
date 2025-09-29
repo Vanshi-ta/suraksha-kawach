@@ -150,7 +150,6 @@ const AlertCard: React.FC<{ alert: Alert, onAcknowledge: (id: number) => void }>
             {/* Action Buttons */}
             <div className="mt-4 flex flex-wrap gap-2">
                 <Link to="/gyan-kendra" className="bg-primary-DEFAULT text-white text-sm font-semibold py-1 px-3 rounded-lg hover:bg-primary-hover">{t('satarkHub.learnSafety')}</Link>
-                <button className="bg-action-DEFAULT text-white text-sm font-semibold py-1 px-3 rounded-lg hover:bg-action-hover">{t('satarkHub.practiceDrill')}</button>
                 <button 
                     onClick={() => onAcknowledge(alert.id)}
                     disabled={alert.acknowledged}

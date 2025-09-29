@@ -5,17 +5,19 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { X } from './Icons';
 import { UserRole } from '../types';
 
+// Define the structure for a single tour step
 interface TourStep {
     targetId: string;
     titleKey: string;
     contentKey: string;
     placement?: 'top' | 'bottom' | 'left' | 'right' | 'center';
-    roles?: UserRole[]; 
+    roles?: UserRole[]; // ADDED: Specify which roles see this step
 }
 
+// Define the master list of all possible tour steps
 const ALL_TOUR_STEPS: TourStep[] = [
     {
-        targetId: 'welcome-step',
+        targetId: 'welcome-step', // Virtual target for centered modal
         titleKey: 'onboarding.welcome.title',
         contentKey: 'onboarding.welcome.content',
         placement: 'center',
@@ -31,20 +33,21 @@ const ALL_TOUR_STEPS: TourStep[] = [
         titleKey: 'onboarding.gyanKendra.title',
         contentKey: 'onboarding.gyanKendra.content',
         placement: 'right',
-        roles: [UserRole.Student, UserRole.Teacher], 
+        roles: [UserRole.Student, UserRole.Teacher], // Visible only to Students and Teachers
     },
     {
         targetId: 'abhyas-arena-link',
         titleKey: 'onboarding.abhyasArena.title',
         contentKey: 'onboarding.abhyasArena.content',
         placement: 'right',
-        roles: [UserRole.Student, UserRole.Teacher], 
+        roles: [UserRole.Student, UserRole.Teacher], // Visible only to Students and Teachers
     },
     {
         targetId: 'satark-hub-link',
         titleKey: 'onboarding.satarkHub.title',
         contentKey: 'onboarding.satarkHub.content',
         placement: 'right',
+        // All roles see this, so no 'roles' property needed
     },
     {
         targetId: 'language-switcher',
@@ -59,7 +62,7 @@ const ALL_TOUR_STEPS: TourStep[] = [
         placement: 'right',
     },
     {
-        targetId: 'end-step', 
+        targetId: 'end-step', // Virtual target for final message
         titleKey: 'onboarding.end.title',
         contentKey: 'onboarding.end.content',
         placement: 'center',
@@ -69,7 +72,9 @@ const ALL_TOUR_STEPS: TourStep[] = [
 const OnboardingTour: React.FC = () => {
     const { t } = useTranslation();
     const { stopTour } = useOnboarding();
-    const { user } = useAuth(); 
+    const { user } = useAuth(); // Get user to determine role
+
+    // Filter tour steps based on the current user's role
     const tourSteps = useMemo(() => {
         if (!user) return [];
         return ALL_TOUR_STEPS.filter(step => 
@@ -83,7 +88,7 @@ const OnboardingTour: React.FC = () => {
     const currentStep = tourSteps[currentStepIndex];
 
     const calculateRect = useCallback(() => {
-        if (!currentStep) return; 
+        if (!currentStep) return; // Guard for when steps are not ready
         
         if (currentStep.placement === 'center') {
             setTargetRect(null);
@@ -98,6 +103,7 @@ const OnboardingTour: React.FC = () => {
     }, [currentStep]);
 
     useLayoutEffect(() => {
+        // Clear previous highlights
         document.querySelectorAll('.tour-highlight').forEach(el => el.classList.remove('tour-highlight'));
         
         calculateRect();
@@ -126,11 +132,11 @@ const OnboardingTour: React.FC = () => {
     };
 
     const getTooltipPosition = () => {
-        if (!targetRect) { 
+        if (!targetRect) { // Center placement
             return { top: '50%', left: '50%', transform: 'translate(-50%, -50%)' };
         }
         
-        const offset = 12; 
+        const offset = 12; // Space between target and tooltip
         switch (currentStep.placement) {
             case 'right':
                 return { top: targetRect.top, left: targetRect.right + offset };
@@ -145,6 +151,7 @@ const OnboardingTour: React.FC = () => {
         }
     };
     
+    // Add a simple CSS class for highlighting
     useEffect(() => {
         const style = document.createElement('style');
         style.innerHTML = `
@@ -162,6 +169,7 @@ const OnboardingTour: React.FC = () => {
         };
     }, []);
 
+    // If there are no steps for this user, or the current step isn't ready, don't render.
     if (!currentStep) {
         return null;
     }
