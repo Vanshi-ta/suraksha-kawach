@@ -1,6 +1,5 @@
 
 
-
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../App';
@@ -72,7 +71,6 @@ const LoginPage: React.FC = () => {
                         <div className="space-y-4">
                             <label className="text-sm font-medium text-gray-700 dark:text-gray-300">{t('login.selectRole')}</label>
                             <div className="grid grid-cols-3 gap-3">
-                                {/* FIX: Added children to RoleButton components to satisfy the required 'children' prop. Each button now includes an icon and translated text. */}
                                 <RoleButton role={UserRole.Student}><GraduationCap className="h-5 w-5 mr-2" />{t('login.student')}</RoleButton>
                                 <RoleButton role={UserRole.Teacher}><Briefcase className="h-5 w-5 mr-2" />{t('login.teacher')}</RoleButton>
                                 <RoleButton role={UserRole.Administrator}><Building className="h-5 w-5 mr-2" />{t('login.admin')}</RoleButton>
