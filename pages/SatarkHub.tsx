@@ -166,7 +166,6 @@ const AlertCard: React.FC<{ alert: Alert, onAcknowledge: (id: number) => void }>
     );
 };
 
-
 // Admin Broadcast Component
 const AdminBroadcast: React.FC = () => (
     <div className="p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-md">
