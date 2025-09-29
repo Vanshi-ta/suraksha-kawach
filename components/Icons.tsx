@@ -37,8 +37,6 @@ export const TrendingUp: React.FC<{ className?: string }> = ({ className }) => <
 export const Target: React.FC<{ className?: string }> = ({ className }) => <Icon className={className}><circle cx="12" cy="12" r="10" /><circle cx="12" cy="12" r="6" /><circle cx="12" cy="12" r="2" /></Icon>;
 export const Bell: React.FC<{ className?: string }> = ({ className }) => <Icon className={className}><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" /><path d="M13.73 21a2 2 0 0 1-3.46 0" /></Icon>;
 export const ExternalLink: React.FC<{ className?: string }> = ({ className }) => <Icon className={className}><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" /><polyline points="15 3 21 3 21 9" /><line x1="10" y1="14" x2="21" y2="3" /></Icon>;
-
-// Newly Added Icons
 export const Heart: React.FC<{ className?: string }> = ({ className }) => <Icon className={className}><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" /></Icon>;
 export const Droplet: React.FC<{ className?: string }> = ({ className }) => <Icon className={className}><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z" /></Icon>;
 export const Flame: React.FC<{ className?: string }> = ({ className }) => <Icon className={className}><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0-2.5 2.5z" /></Icon>;
